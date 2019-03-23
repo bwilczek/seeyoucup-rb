@@ -1,0 +1,6 @@
+name,code,country,lat,lon,elev,style,rwdir,rwlen,freq,desc
+"Wrocław, Szymanów","EPWS",pl,5112.423N,01659.898E,119,2,144,768,122.8,"Status: Lądowisko zarejestrowane; ICAO: EPWS; Radio: Szymanow-Radio 122.8"
+"BARYSIAI","EYSB",pl,5604.233N,02333.483E,25,5,96,1050,122.050,"Asphalt-concrete, 1050x30m, 96°-276°
+with another line
+"
+"Babięta","EPBB",pl,5340.095N,02115.283E,155,2,145,737,,"Status: Ladowisko zarejestrowane; ICAO: EPBB; Kierunek ladowania (GEO): 145/325 (14/32); Wymiary pasa: 737 x 52 m [-100/-50]; Elewacja: 510 ft = 155 m; Link: http://www.mazuryairfields.pl/airfield/babieta; Kontakt: +48 601620452; Uwagi: Nr ewid.ULC 164; Film: https://youtu.be/4GGxUUcom0A; Kamera: http://www.mazuryairfields.pl/airfield/babieta/online; Polozenie drogi startowej: https://goo.gl/WmUFBL"
