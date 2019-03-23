@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.4
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'configure']
+Metrics/MethodLength:
+  Max: 15
+Metrics/ClassLength:
+  Max: 150
+Metrics/LineLength:
+  Enabled: true
+  Exclude:
+    - spec/**/*
+    - watir_pump.gemspec
+Style/CommentedKeyword:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
