@@ -21,24 +21,40 @@ module SeeYouCup
     def read_waypoint(buffer)
       # :name, :code, :country, :lat, :lon, :elev, :style, :rwydir, :rwylen, :freq, :desc
       wp = Waypoint.new
-      wp.name = read_field(buffer)
-      wp.code = read_field(buffer)
-      wp.country = read_field(buffer)
-      wp.lat = read_field(buffer)
-      wp.lon = read_field(buffer)
-      wp.elev = read_field(buffer)
-      wp.style = read_field(buffer)
-      wp.rwydir = read_field(buffer)
-      wp.rwylen = read_field(buffer)
-      wp.freq = read_field(buffer)
-      wp.desc = read_field(buffer)
+      wp.name = read_quoted_field(buffer)
+      wp.code = read_quoted_field(buffer)
+      wp.country = read_simple_field(buffer)
+      wp.lat = read_simple_field(buffer)
+      wp.lon = read_simple_field(buffer)
+      wp.elev = read_simple_field(buffer)
+      wp.style = read_simple_field(buffer)
+      wp.rwydir = read_simple_field(buffer)
+      wp.rwylen = read_simple_field(buffer)
+      wp.freq = read_simple_field(buffer)
+      wp.desc = read_quoted_field(buffer)
       wp
     end
 
-    def read_field(buffer)
+    def read_simple_field(buffer)
+      ret = String.new
+      while (char = buffer.getc)
+        break if char == ','
+        if char == '"'
+          require 'pry'; binding.pry
+          raise 'quote not allowed'
+        end
+        ret << char
+      end
+      ret
+    end
+
+    def read_quoted_field(buffer)
       ret = String.new
       quote_open = false
+      first = false
       while (char = buffer.getc)
+        raise 'quote expected' if first && char != '"'
+        first = false
         break if char == ',' && !quote_open
         break if char == "\n" && !quote_open
 

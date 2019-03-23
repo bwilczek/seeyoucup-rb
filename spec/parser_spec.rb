@@ -17,12 +17,11 @@ RSpec.describe SeeYouCup::Parser do
     end
   end
 
-  # describe '#parse pro' do
-  #   before { @result = SeeYouCup::Parser.new("#{__dir__}/samples/lotnik.cup").parse }
-  #
-  #   it 'returns three waypoints' do
-  #     require 'pry';binding.pry
-  #     expect(@result.last.desc).to eq 'Asphalt-concrete, 1050x30m, 96°-276°'
-  #   end
-  # end
+  describe '#parse pro' do
+    before { @result = SeeYouCup::Parser.new("#{__dir__}/samples/lotnik.cup").parse }
+
+    it 'correctly parses file to the last line' do
+      expect(@result.last.desc).to eq 'Asphalt-concrete, 1050x30m, 96°-276°'
+    end
+  end
 end
