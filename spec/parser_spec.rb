@@ -9,7 +9,7 @@ RSpec.describe SeeYouCup::Parser do
     expect { SeeYouCup::Parser.new('/no/such/file') }.to raise_error SeeYouCup::FileNotFound
   end
 
-  describe '#parse' do
+  describe '#parse basic example' do
     before { @result = SeeYouCup::Parser.new("#{__dir__}/samples/basic.cup").parse }
 
     it 'returns three waypoints' do
@@ -17,7 +17,7 @@ RSpec.describe SeeYouCup::Parser do
     end
   end
 
-  describe '#parse pro' do
+  describe '#parse real data' do
     before { @result = SeeYouCup::Parser.new("#{__dir__}/samples/lotnik.cup").parse }
 
     it 'correctly parses file to the last line' do

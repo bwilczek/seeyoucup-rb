@@ -39,10 +39,9 @@ module SeeYouCup
       ret = String.new
       while (char = buffer.getc)
         break if char == ','
-        if char == '"'
-          require 'pry'; binding.pry
-          raise 'quote not allowed'
-        end
+
+        raise 'quote not allowed' if char == '"'
+
         ret << char
       end
       ret
@@ -54,6 +53,7 @@ module SeeYouCup
       first = false
       while (char = buffer.getc)
         raise 'quote expected' if first && char != '"'
+
         first = false
         break if char == ',' && !quote_open
         break if char == "\n" && !quote_open

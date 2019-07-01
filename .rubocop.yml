@@ -8,11 +8,18 @@ Metrics/MethodLength:
   Max: 15
 Metrics/ClassLength:
   Max: 150
+Metrics/AbcSize:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
 Metrics/LineLength:
   Enabled: true
+  Max: 100
   Exclude:
     - spec/**/*
-    - watir_pump.gemspec
+    - seeyoucup.gemspec
 Style/CommentedKeyword:
   Enabled: false
 Naming/UncommunicativeMethodParamName:
