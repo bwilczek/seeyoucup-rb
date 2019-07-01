@@ -7,7 +7,7 @@ File format specs can be found [here](http://download.naviter.com/docs/CUP-file-
 Example:
 
 ```
-require 'seeyoucup'
+require 'see_you_cup'
 
 waypoints = SeeYouCup::Parser.new("#{__dir__}/samples/basic.cup").parse
 wp = waypoints.first
